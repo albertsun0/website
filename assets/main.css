@@ -1,0 +1,27 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background: white;
+    font-family:'Montserrat','Roboto', Charcoal, sans-serif;
+    animation: fadein 0.3s;
+    -moz-animation: fadein 0.3s; /* Firefox */
+    -webkit-animation: fadein 0.3s; /* Safari and Chrome */
+    -o-animation: fadein 0.3s; /* Opera */
+ }
+
+
+.header{
+ 	padding: 10%;
+ 	padding-top: 350px;
+	text-align: center;
+
+	height: 90%;
+}
+
+
+/*ANIMATIONS*/
+
+.animatefadein {
+			transition: fadein 0.3s ease-out;
+		}
