@@ -65,12 +65,16 @@ h1,h2,h3,h4{
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.0);
 }
-.contentbox > p{
-  text-indent: 30px;
+
+.noindent{
+  font-size: 1.2em;
+  line-height: 30px;
 }
+
 .writing > p{
   font-size: 1.2em;
   line-height: 30px;
+  text-indent: 30px;
 }
 .rec{
   width: 60%;
@@ -111,6 +115,19 @@ h1,h2,h3,h4{
 }
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 
+.contentimagehalf{
+  width: 40%;
+}
+
+.credits > a {
+  word-wrap: break-word;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.question{
+  font-weight: bold;
+}
 
 @media screen and (max-width: 800px) {
   .column {
@@ -128,6 +145,9 @@ h1,h2,h3,h4{
   }
   .dir{
     padding-left: 20px;
+  }
+  .contentimagehalf{
+    width: 100%;
   }
 }
 
