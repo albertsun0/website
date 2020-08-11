@@ -1,0 +1,115 @@
+Thanks for visiting! I am a high school student who loves coding and everything related to computers. 
+
+I hope I can teach and inspire others through this blog!
+
+
+Introduction
+	
+	Hello and thanks for tuning in! 
+
+	Welcome to the basics of Arduinos. You may have heard about Arduinos from a friend or seen them online: these tiny computer boards that have infinite possibilities, pictures of sensors, leds, and countless wires jumbled together, an introduction into the electronics. Arduinos are the most easily accessible and easy to use of the boards, chips, and code that power every electronic in the world.
+
+	For me, Arduinos were an alternate way of expressing my creativity through code. It was a fresh take to the world of computer science I knew that was confined within a computer screen, and a way for my same code to have an instant effect in the real world. Nothing makes me happier than seeing LED strips finally light up, experimenting with sensors and modules, and teaching people the wonders of Arduinos.
+
+	These tutorials will teach the very basics of Arduinos, and provide a summary for everything I learned. I hope I can compile everything I learned from videos, websites, and experience into a condensed and streamlined learning experience for you. In addition, I hope to inspire you to explore more by yourself by sharing some of my own projects, and I hope that you will continue learning beyond this course.
+
+       
+
+	Let's get started!
+	
+	
+	Above are the two most common types of Arduinos, the Arduino UNO and Arduino Nano. For our purposes, both do the same thing, but in all my tutorials I will be using the Arduino Nano. The Arduino nano is cheaper and smaller, and conveniently fits onto a breadboard. 
+
+Breadboard? A breadboard is a board with holes and metal connections that is used for easily prototyping circuits. It allows us to play around with configurations without soldering. In most of my tutorials, we will be using breadboards to create our projects. Breadboards can be a little confusing at first, but here are the basics.
+
+
+
+This is a breadboard. The holes are for wires or sensors, which connect metal plates under the plastic covering together. 
+
+	
+
+These are the metal connections under the plastic cover, which is in a simple pattern. Each column, labeled with numbers, is connected together, except in the middle. And each of the rails, labeled + or - , or the long horizontal rows on the top and bottom, are connected. To connect the columns or rails together, we use wires, sensors, or other electronic parts. 
+
+These will make more sense once we start doing actual projects! 
+
+
+
+This is how an Arduino Nano connects to a breadboard, with pins coming out of the Arduino going into the board. On the Arduino, each of the pins has its own function. 
+
+
+
+This is a diagram of the Arduino Nano and it’s pins, which are labeled on the Arduino. For now, there are only 3 pins you have to worry about: the digital pins, ground or GND, and 5v pin. The digital pins are pins that can be configured in code to provide current through them, and are the main pins we attach things to. The ground is the ground of the circuit, which is where all electricity has to go to to complete a circuit, and the 5V pin constantly provides electricity, and is not configurable in code. The Arduino Uno has the same pins.
+
+That's all you need to know for now! Thanks for reading and see you in the next one where we will be making our first project!
+
+Q&A
+
+What materials should I buy? 
+
+For beginners, one of the best tools are the Arduino starter kits that run for 20 - 30 bucks online. These will have everything from breadboards to wires to sensors, and have everything in one package. For these first tutorials, everything will be in there. Additionally, I would recommend getting a led strip such as Neopixels, as there are many cool projects related to them
+
+Do I need coding experience?
+
+Coding knowledge is not required for these early steps, and in fact, Arduino code is a great introduction to coding. You do not need any previous knowledge to learn Arduinos!
+
+
+
+Lesson 1- Setup and Blinklight
+
+Welcome back and to lesson one. In this lesson we will be setting up everything for Arduinos, and creating our first program that makes a light blink. Let's get started!
+
+Materials- 
+	Breadboard
+	2 leg Led Light
+	Resistor 
+Computer or device with Arduino IDE 
+	
+In the last lesson we discussed the basics of Arduinos and a little about materials. Hopefully you will have all materials at this point. 
+
+Before making anything, you must have the Arduino IDE on a device. The IDE is used to write and upload code to the Arduionos, and will be necessary after the first part of this tutorial. It is free on the official Arduino website https://www.arduino.cc/en/main/software
+
+After you install, there is minimal setup.
+
+First Project- Turn Led On
+
+Remember in lesson one the multiple pins on the Arduino, which all had different purposes? The 5v pin provides 5 volts of power, and this is enough to power most modules or the led in this project. 
+https://www.pcboard.ca/image/cache/catalog/products/leds/5mm_leds/frosted-leds-red-green-blue-yellow-white-800x800.jpg
+
+This is a Led, and there are only two things you need to know. First, the long leg is positive, and the right leg is negative. This means that the long leg should be faced towards the power source of the circuit. Second, leds take less voltage (1.8 - 3.3 volts) than the Arduino provides (5 volts). This means that there is too much voltage across the led, and the led may burn out. So, we will need a resistor to reduce the voltage. For some leds, the circuit may work without a resistor, but it is safer and always good practice to have one. If you bought a kit you can try different resistors, but basically any resistor will work. 
+	
+
+
+
+
+Arduino Rubik's Cube Timer
+
+
+Utrasonic sensor-
+This sensor can judge distances pretty accurately. It uses two sensors, which look a little like eyes. One emits a wave that bounces off objects and the other one recieves them, The time in between and the speed of the wave is used to calculate the distance.
+
+  digitalWrite(trigpin, LOW); 
+  delayMicroseconds(2); 
+  digitalWrite(trigpin, HIGH); 
+  delayMicroseconds(10); 
+  digitalWrite(trigpin, LOW); 
+ 
+  int dist = pulseIn(echopin,HIGH)/29.387/2;
+
+  This code repeatedly writes high and low into the emitting sensor, and writes the result from the echopin or the recieving sensor into the integer dist. The numbers /29.387/2 convert the measurement to inches.
+
+  On the back of the sensor, there are four labeled pins. Ground and VCC are for ground and 5v pins. Trig and Echo are for the trigger sensor, or the emmiting one, and echo is the one that recives the bounce. These two pins will be connected to one of the Digital input pins on the Arduino.
+
+Button-
+  
+  A button is simply a break in the circuit, and when the button is pressed, the circuit connects. This can be seen in the inside diagram of the button, which has two sides that are originally disconnected, but connected when the button is pushed. 
+
+  One side of the button will be connected to a digital input pin, and the other will be connected to ground.
+
+  pinMode(left, INPUT_PULLUP);
+
+  We will be learning a new input type, INPUT_PULLUP, which 
+
+Combining these two
+
+The goal of this project is to have a similar setup and purpose of official rubix cube timers, but for the timer to automatically end when the ultrasonic sensor is updated. We can easily do this with buttons and the sensor
+
