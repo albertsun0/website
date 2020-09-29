@@ -113,3 +113,6 @@ Combining these two
 
 The goal of this project is to have a similar setup and purpose of official rubix cube timers, but for the timer to automatically end when the ultrasonic sensor is updated. We can easily do this with buttons and the sensor
 
+
+
+

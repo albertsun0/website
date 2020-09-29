@@ -4,24 +4,101 @@ body, html {
     margin: 0;
     background: white;
     font-family:'Montserrat','Roboto', Charcoal, sans-serif;
-    animation: fadein 0.3s;
-    -moz-animation: fadein 0.3s; /* Firefox */
-    -webkit-animation: fadein 0.3s; /* Safari and Chrome */
-    -o-animation: fadein 0.3s; /* Opera */
  }
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 500vh;
+  background-color: white;
+  animation: body 1s linear;
+}
+
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  transition: 0.2s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#C0C0C0; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 
 
 .header{
- 	padding: 10%;
- 	padding-top: 350px;
+ 	padding: 0px;
 	text-align: center;
-
-	height: 90%;
+	height: 100vh;
 }
+.name{
+    padding-top: 30vh;
+}
+.sectionhead{
+    text-align: center;
+    padding: 10px;
+}
+.content{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: rgba(100,100,200,0.2);
+}
+.card{
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+    margin-bottom: 2%; 
+}
+.left{
+    width: 20%;
+    float:left;
+    display: block;
+}
+.right{
+    float: left;
+    padding-left: 2%;
+    display: block;
+    width: 70%;
+}
+
+.cardimg{
+   max-height: 90%;
+   max-width: 100%;
+   object-fit: cover;
+   overflow: hidden;
+}
+.tagcontain{
+    padding-top: 3%;
+
+}
+.tag{
+    padding: 10px;
+    background-color: dodgerblue;
+    border-radius: 20px;
+    float: left;
+    font-size: 12px;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+
 
 
 /*ANIMATIONS*/
 
-.animatefadein {
-			transition: fadein 0.3s ease-out;
-		}
+
