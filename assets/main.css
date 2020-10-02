@@ -8,49 +8,84 @@ body, html {
 
 body {
   padding: 0;
-  margin: 0;
-  min-height: 500vh;
   background-color: white;
   animation: body 1s linear;
+  overflow-x: hidden;
 }
 
+
+* {
+  box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  transition: 0.2s;
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 100vh; /* Should be removed. Only for demonstration */
+  transition: 1s;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-  
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background:#C0C0C0; 
-  border-radius: 20px;
+.slideright{
+    position: absolute;
+    left: 70%;
+    transition: 1s;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+.slideright.invis{
+    transform: translate(600px);  
 }
 
+/* Two Column Layout */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width:992px){
+    .slideright{
+        display: none;
+    }
+    .left{
+        width: 100% !important;
+    }
+    .right{
+        width: 100% !important;
+    }
+}
 
 .header{
  	padding: 0px;
 	text-align: center;
 	height: 100vh;
 }
+.sub{
+    width: 80%;
+    margin: auto;
+    opacity: 0;
+    transition: 1s;
+}
+
 .name{
-    padding-top: 30vh;
+    padding-top: 20vh;
+    padding-bottom: 3vh;
+}
+.desc{
+    padding-bottom: 3vh;
 }
 .sectionhead{
     text-align: center;
     padding: 10px;
 }
+
+.iconlink{
+    color: black;
+    margin-right: 20px;
+
+}
+
 .content{
     padding-left: 10%;
     padding-right: 10%;
@@ -58,22 +93,27 @@ body {
     padding-bottom: 2%;
     background-color: rgba(100,100,200,0.2);
 }
+
 .card{
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
-    margin-bottom: 2%; 
+    margin-bottom: 20px; 
     transition: 0.3s;
 }
+
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
 .left{
     width: 20%;
     float:left;
     display: block;
+    overflow: hidden;
 }
+
 .right{
     float: left;
     padding-left: 2%;
@@ -82,16 +122,18 @@ body {
 }
 
 .cardimg{
-   max-height: 90%;
-   max-width: 100%;
+   max-height: 100%;
+   width: 100%;
    object-fit: cover;
    overflow: hidden;
    flex-shrink: 0;
 }
+
 .tagcontain{
     padding-top: 3%;
 
 }
+
 .tag{
     color: white;
     padding: 10px;
