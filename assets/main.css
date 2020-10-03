@@ -4,6 +4,7 @@ body, html {
     margin: 0;
     background: white;
     font-family:'Montserrat','Roboto', Charcoal, sans-serif;
+    scroll-behavior: smooth;
  }
 
 body {
@@ -86,7 +87,7 @@ body {
 }
 .name{
     padding-top: 3vh;
-    padding-bottom: 3vh;
+    padding-bottom: 0vh;
 }
 
 .desc{
