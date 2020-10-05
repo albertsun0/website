@@ -13,19 +13,16 @@ var small = false;
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0); //viewport w
 if (vw<992) {
 	small = true;
-}
-function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
+
 }
 
 window.addEventListener('scroll', () => {
 	y = window.scrollY;
 	console.log(y);
-	if (y== 0 ) {undoanimatetop();}
+	if (y== 0 ) {
+		undoanimatetop();
+		a = false;
+	}
 	if(y>0 && a ==false ){	
 		if(!isMobile && !small){
 			animatetop();
@@ -63,6 +60,16 @@ function undoanimatetop() {
 }
 
 function animatetext() {
+	arrow = document.getElementById('arrow');
+	arrow.classList.remove('arrowanimate');
+	arrow.style.opacity="0";
 	document.getElementById('sub').style.opacity = "1";
 }
+
+function scroll(){
+	animatetop();
+	a = true;
+	console.log("pee");
+}
+
 

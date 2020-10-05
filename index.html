@@ -3,25 +3,27 @@
     <title>Albert Sun</title>
    	<meta name="viewport" content="width=device-width,maximum-scale=1"/>
     <link rel="stylesheet" type="text/css" href="assets/main.css">
-    <link rel="icon" href="assets/profile.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="assets/profile.jpg" type="image/gif" sizes="16x16">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
     <script src = "assets/main.js"></script>
     <script src="https://use.fontawesome.com/519bff6968.js"></script>
 </head>
-<body>
+<body onload="scroll()">
 	<div class="row">
 	  <div class="column" id="columnleft">
 	    <div class="header">
 	    	<img src="assets/profile.jpg" class="profile">
 			<h1 class="fadein name">Hi I'm Albert</h1>
-			<i class="fa fa-angle-down arrowanimate" aria-hidden="true" id= "arrow"></i>
+			<div onclick="scroll();">
+				<i class="fa fa-angle-down arrowanimate fa-lg" aria-hidden="true" id="arrow"></i>
+			</div>
 
 			<div class="sub" id="sub">
 				<h3 class="desc">A high school student who loves coding, Arduinos, and front end development.</h3>
 
-				<a href="https://github.com/qwertyuiop888" class="iconlink"><i class="fa fa-github" aria-hidden="true"></i></a>
-	 
-	  			<a href="mailto:albertsun0@gmail.com" class="iconlink"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+				<a href="https://github.com/qwertyuiop888" class="iconlink"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a> <a href="https://github.com/qwertyuiop888">qwertyuiop888</a>
+	 			<br><br>
+	  			<a href="mailto:albertsun0@gmail.com" class="iconlink"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a> <a href="mailto:albertsun0@gmail.com">albertsun0@gmail.com</a>
 	  
 			</div>
 			
@@ -31,22 +33,21 @@
 	  <div class="slideright invis" id = "slide">
 	  	<h3 style="margin-bottom: 3em">Contents</h3>
 	  	<a href="#showcase" class="link-nav">Showcase</a>
-	  	<a href="" class="link-nav">Resume</a>
-	  	<a href="" class="link-nav">All Projects</a>
+	  	<a href="#works" class="link-nav">In The Works</a>
 	  	<a href="" class="link-nav">Contact</a>
 
 	  </div>
 	</div>
 
-	<div class="content" id="showcase">
+	<div class="section" id="showcase" style="background-color: rgba(100,100,200,0.2);">
 		<h1 class="sectionhead">Showcase</h1>
 
 		<div class="card">
 			<div class="left">
-				<img class = "cardimg" src="assets/slides.png">
+				<img class = "cardimg" src="assets/slidesbg.gif">
 			</div>
 			<div class="right">
-				<h2>Slides Background</h2>
+				<h2>Doshy - Slides Background</h2>
 				<p>Generate beautiful material backgrounds for Google Slides presentations. Over 20 themes and 3 types of backgrounds to choose from. 100000 users and a 4.6 star rating</p>
 
 
@@ -65,11 +66,11 @@
 
 		<div class="card">
 			<div class="left">
-				<img class = "cardimg" src="assets/cal.png" style="">
+				<img class = "cardimg" src="assets/stresscal.gif" style="">
 			</div>
 			<div class="right">
 				<h2>Stress Calendar</h2>
-				<p>descri</p>
+				<p>A mood, stress tracking, and productivity application that records and analyzes feelings, and produces a stress based task list to help students coordinate and declutter their lives. It features a calendar page with important reminders and notifications, a to-do list with tasks sorted by stress and importance, and a diary page where users can record feelings and stress, as well as reflect on previous days.</p>
 
 				<a href = "https://github.com/remowote/flutter-StressCalendar" target="_blank"> Github</a>
 
@@ -82,7 +83,7 @@
 
 		<div class="card">
 			<div class="left">
-				<img class = "cardimg" src="assets/phut.jpg" style="">
+				<img class = "cardimg" src="assets/phut.gif" style="">
 			</div>
 			<div class="right">
 				<h2>Phutball</h2>
@@ -95,8 +96,90 @@
 					<div class="tag" style="background-color: darkblue; color: white">Dart</div>
 				</div>
 			</div>	
+		</div> <!--showcase-->
+	</div>
+	
+	<div class="section" style="background-color: rgba(200,200,200,0.2);" id="works">  <!-- other projects -->
+		<h1 class="sectionhead"> In The Works</h1>
+
+		<div class="row2">
+		  <div class="column2">
+		    <img class = "otherimage" src="assets/igloogame.png" style="margin-top: -10%">
+		  </div>
+		  <div class="column2">
+		    <div class="othertext">
+		    	<h3>Igloo Quest</h3>
+		    	<p>The story of a lost traveler with an unique ability to rewind time</p>
+		    	<p>Game mechanics and Artist</p>
+		    	<div class="tagcontain">
+					<div class="tag">Unity</div>
+					<div class="tag" style="background-color: MediumSeaGreen">C#</div>
+				</div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="row2">
+			<div class="column2">
+			    <div class="othertext">
+		    	<h3>Board RGB</h3>
+		    	<p>A LED light strip system and controller app for skateboards</p>
+		    	<a href="https://github.com/qwertyuiop888/Board-RGB">Github</a>
+		    	<div class="tagcontain">
+					<div class="tag">Flutter</div>
+					<div class="tag" style="background-color: MediumSeaGreen">Arduino</div>
+					<div class="tag" style="background-color: darkblue; color: white">Dart</div>
+					<div class="tag" style="background-color: lightgreen; color: black">C++</div>
+				</div>
+		    </div>
+		  </div>
+		  <div class="column2">
+		    <img class = "otherimage" src="assets/board.png" style="height: 100%; width: auto; float: center">
+		  </div>
 		</div>
 
-	
+		<div class="row2">
+		  <div class="column2">
+		    <img class = "otherimage" src="blog/Arduino/intro/rotaryneopixel.jpg" style="margin-top: -15%">
+		  </div>
+		  <div class="column2">
+		    <div class="othertext">
+		    	<h3>Arduino Blog</h3>
+		    	<p>A blog introducing the basics of Arduinos as a resource for beginners</p>
+		    	<p>This started with my <a href="https://github.com/qwertyuiop888/ArduinoStarting">Arduino Github Repository</a></p>
+		    	<a href="blog/Arduino/intro/intro.html">Lesson One</a>
+		    	<div class="tagcontain">
+					<div class="tag">Arduino</div>
+					<div class="tag" style="background-color: lightgreen; color: black">C++</div>
+					<div class="tag" style="background-color: orange">HTML</div>
+				</div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	<div class="section" id="contact">
+		
+
+	</div>
+
+
+
+<script type="text/javascript">
+	var coll = document.getElementsByClassName("collapsible");
+	console.log(coll);
+
+	for (var i = 0; i < coll.length; i++) {
+		console.log("yes");
+	  	coll[i].addEventListener("click", function() {
+	    this.classList.toggle("active");
+	    var content = this.nextElementSibling;
+	    if (content.style.maxHeight){
+	      content.style.maxHeight = null;
+	    } else {
+	      content.style.maxHeight = content.scrollHeight + "px";
+	    } 
+	  });
+	}</script> <!-- collapsable -->
 
 </body>
