@@ -23,12 +23,14 @@ window.addEventListener('scroll', () => {
 		undoanimatetop();
 		a = false;
 	}
-	if(y>0 && a ==false ){	
+	if(y>0 && a == false ){	
 		if(!isMobile && !small){
 			animatetop();
+			a = true;
 		}
 		else{
 			animatetext();
+			a = true;
 		}
 	}
 
@@ -69,7 +71,7 @@ function animatetext() {
 function scroll(){
 	animatetop();
 	a = true;
-	console.log("pee");
+	console.log("onloadscroll");
 }
 
 
