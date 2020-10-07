@@ -43,7 +43,6 @@ function animatetop() {
 	left = document.getElementById('columnleft');
 	arrow = document.getElementById('arrow');
 	left.style.width = "80%";
-	document.getElementById('sub').style.opacity = "1";
 	document.getElementById('slide').classList.remove("invis");
 	arrow.classList.remove('arrowanimate');
 	arrow.style.opacity="0";
@@ -53,7 +52,6 @@ function undoanimatetop() {
 	left = document.getElementById('columnleft');
 	arrow = document.getElementById('arrow');
 	left.style.width = "100%";
-	document.getElementById('sub').style.opacity = "0";
 	document.getElementById('slide').classList.add("invis");
 	arrow.classList.add('arrowanimate');
 	arrow.style.opacity="1";
