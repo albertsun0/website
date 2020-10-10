@@ -1,6 +1,6 @@
 var y = window.scrollY;
 
-var a = false;
+var sidebarExpanded = false;
 
 var isMobile = false; //initiate as false
 // device detection
@@ -11,6 +11,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 var small = false;
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0); //viewport w
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 if (vw<992) {
 	small = true;
 
@@ -19,18 +20,21 @@ if (vw<992) {
 window.addEventListener('scroll', () => {
 	y = window.scrollY;
 	console.log(y);
-	if (y== 0 ) {
+
+
+	if (y >vh/3) {
 		undoanimatetop();
-		a = false;
+		sidebarExpanded = false;
 	}
-	if(y>0 && a == false ){	
+	if((y<vh/3) && sidebarExpanded == false ){	
+
 		if(!isMobile && !small){
 			animatetop();
-			a = true;
+			sidebarExpanded = true;
 		}
 		else{
 			animatetext();
-			a = true;
+			sidebarExpanded = true;
 		}
 	}
 
@@ -44,8 +48,6 @@ function animatetop() {
 	arrow = document.getElementById('arrow');
 	left.style.width = "80%";
 	document.getElementById('slide').classList.remove("invis");
-	arrow.classList.remove('arrowanimate');
-	arrow.style.opacity="0";
 }
 
 function undoanimatetop() {
@@ -53,8 +55,6 @@ function undoanimatetop() {
 	arrow = document.getElementById('arrow');
 	left.style.width = "100%";
 	document.getElementById('slide').classList.add("invis");
-	arrow.classList.add('arrowanimate');
-	arrow.style.opacity="1";
 
 
 }
@@ -68,7 +68,7 @@ function animatetext() {
 
 function scroll(){
 	animatetop();
-	a = true;
+	sidebarExpanded = true;
 	console.log("onloadscroll");
 }
 
