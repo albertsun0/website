@@ -1,5 +1,5 @@
 
-var words = ["sadge","first","time","slowly","believe","albert", "yeah", "cary", "excited", "chungus", "calm","think","problems","mwah","regina"];
+var words = ["sadge","first","time","slowly","believe","albert", "yeah", "carry", "excited", "chungus", "calm","think","problems","mwah","regina"];
 
 console.log("I love selina");
 
