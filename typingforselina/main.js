@@ -34,12 +34,18 @@ function begin() {
 	document.getElementById('startb').style.display = "none";
 	document.getElementById('inputbox').value = "";
 	starttimer();
+	document.getElementById("inputbox").focus();
 }
+/*window.onload=function(){
+  const box = document.getElementById('inputbox');
+	box.addEventListener('input', checktext);
+}
+*/
 
 function checktext(){
 	if(start == true){
 		console.log("update");
-		textbox = document.getElementById('inputbox');
+		const textbox = document.getElementById('inputbox');
 
 		console.log(textbox.value);
 		if (textbox.value == currentword) {
