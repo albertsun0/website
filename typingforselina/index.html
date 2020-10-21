@@ -16,46 +16,85 @@
 		border: none;
 		padding:10px;
 		cursor: pointer;
+		transition: 0.4s;
 	}
 	.word{
 		font-size: 40px;
 	}
 	.correct{
-		color: green;
+		color: lightgreen;
 	}
 	.incorrect{
-		color: red;
+		color: tomato;
 	}
 	.textbox{
 		font-size: 20px;
+		border: none;
+		border-bottom: 1px solid black;
+		caret-color:blue;
+
+	}
+	input:focus{
+		outline: none !important;
+		border-bottom: 1px solid black;
 	}
 	.wrap{
 		margin-top: 100px;
 	}
+
+	.wordlog{
+	    position: absolute;
+	    left: 80%; 
+	    transition: 1s;
+	    border-left: 1px solid lightgrey;
+	    height: 100vh;
+	    padding-left: 1%;
+	    top: 0;
+	    width: 18.9%;
+	    overflow-y: scroll;
+	    overflow-x: hidden;
+	}
+	.game{
+		width: 80%;
+		text-align: center;
+	}
+	.loggedwordcorrect{
+		width: 95%;
+		font-size: 15px;
+		background-color: lightgreen;
+		color: white;
+		padding: 7px;
+	}
+	.loggedwordincorrect{
+		width: 95%;
+		font-size: 15px;
+		background-color: tomato;
+		color: white;
+		padding: 7px;
+	}
+
 </style>
 <body>
 
-	<center> 
+	<div class="game">
+		<div class="wrap">
+
+		<button id="startb" onclick="begin()" class="button">Start</button>
+		<h1 id="time">0:00</h1>
+		
+		<h1 id="word" class="word">Selina</h1>
+
+		<input type="text" id="inputbox" class= "textbox"; onchange="checktext()">
 
 		
-
-		<div class="game">
-			<div class="wrap">
-
-			<button id="startb" onclick="begin()" class="button">Start</button>
-			<h1 id="time">0:00</h1>
-			
-			<div >
-				<p class="scorekeep correct" id="correct">0 Correct</p>
-				<p class="scorekeep incorrect" id="incorrect">0 Incorrect</p>
-			</div>
-			
-			<h1 id="word" class="word">Selina</h1>
-
-			<input type="text" id="inputbox" class= "textbox"; onchange="checktext()">
-
-			
-			</div>
 		</div>
-	</center>
+	</div>
+	<div class="wordlog" id="wordlog">
+		<h3>World Log</h3>
+		<div>
+			<p class="scorekeep correct" id="correct">0 Correct</p>
+			<p class="scorekeep incorrect" id="incorrect">0 Incorrect</p>
+		</div>
+		
+	</div>
 </body>

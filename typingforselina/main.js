@@ -1,5 +1,5 @@
 
-var words = ["sadge","first","time","slowly","believe","albert", "yeah", "carry", "excited", "chungus", "calm","think","problems","mwah","regina"];
+var words = ["sadge","first","time","slowly","believe","albert", "yeah", "carry", "excited", "chungus", "calm","think","problems","mwah","regina", "scary"];
 
 console.log("I love selina");
 
@@ -14,7 +14,7 @@ var myTimer;
 
 function tick(){
     timeElapsed++;
-    document.getElementById("time").innerHTML = timeElapsed;
+    document.getElementById("time").innerHTML = Math.floor(timeElapsed/60) +':' +timeElapsed%60;
 }
 
 function starttimer(){
@@ -37,7 +37,7 @@ function begin() {
 }
 
 function checktext(){
-	if(start = true){
+	if(start == true){
 		console.log("update");
 		textbox = document.getElementById('inputbox');
 
@@ -45,15 +45,17 @@ function checktext(){
 		if (textbox.value == currentword) {
 			console.log("correct");
 			right++;
+			correctadd();
 			newword();
 			textbox.style.color = "black";
 			textbox.value = "";
-			correctadd();
+			
 		}
 		else{
+			incorrectadd();
 			wrong++;
 			textbox.style.color = "red";
-			incorrectadd();
+			
 		}
 	}
 	else{
@@ -70,8 +72,17 @@ function newword(){
 
 function correctadd(){
 	document.getElementById("correct").innerHTML = right + ' correct';
+
+	add = document.createElement('div');
+	add.innerHTML = currentword;
+	add.classList.add("loggedwordcorrect"); 
+	document.getElementById("wordlog").appendChild(add);
 }
 
 function incorrectadd(){
 	document.getElementById("incorrect").innerHTML = wrong + ' incorrect';
+	add = document.createElement('div');
+	add.innerHTML = currentword;
+	add.classList.add("loggedwordincorrect"); 
+	document.getElementById("wordlog").appendChild(add);
 }
