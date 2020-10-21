@@ -52,8 +52,8 @@ function checktext(){
 			
 		}
 		else{
-			incorrectadd();
 			wrong++;
+			incorrectadd();
 			textbox.style.color = "red";
 			
 		}
@@ -81,6 +81,7 @@ function correctadd(){
 
 function incorrectadd(){
 	document.getElementById("incorrect").innerHTML = wrong + ' incorrect';
+
 	add = document.createElement('div');
 	add.innerHTML = currentword;
 	add.classList.add("loggedwordincorrect"); 
