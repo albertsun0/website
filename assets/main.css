@@ -24,7 +24,7 @@ body {
   float: left;
   width: 100%;
   padding: 10px;
-  height: 80vh; /* Should be removed. Only for demonstration */
+  height: 90vh; /* Should be removed. Only for demonstration */
   transition: 1s;
 }
 
@@ -33,7 +33,7 @@ body {
     left: 80%; 
     transition: 1s;
     border-left: 1px solid lightgrey;
-    height: 80vh;
+    height: 90vh;
     padding-left: 2%;
     padding-top: 15vh;
 }
@@ -80,6 +80,7 @@ body {
  	padding: 0px;
 	text-align: center;
 	height: 100vh;
+  margin: 0px;
 }
 
 .sub{
@@ -89,13 +90,22 @@ body {
     transition: 1s;
 }
 .profile{
-  margin-top: 10vh;
-  border-radius: 50%;
-  width: 10em;
+  margin-top: 11vh;
+  width: 7em;
+  height: 11em;
+  margin-right: 10px;
+  margin-left: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+  transition: 0.7s;
 }
+
+.profile:hover{
+  transform: scale(1.15);
+}
+
 .name{
     padding-top: 3vh;
-    padding-bottom: 0vh;
+    padding-bottom: 3vh;
 }
 
 .desc{
@@ -269,3 +279,31 @@ body {
     padding-left: 20px;
 }
 
+.gallerycolumn{
+  padding: 0 4px;
+}
+.gallerycolumn img{
+  margin-top: 8px;
+  vertical-align: middle;
+  float: left;
+  width: 100%;
+}
+
+.galleryrow {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.gallerydiv:hover{
+  
+}
+
+.imagetext {
+  position: absolute;
+  top:20px;
+  left: 16px;
+}
+.gallerydiv{
+  position: relative;
+}
