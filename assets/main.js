@@ -67,9 +67,12 @@ function animatetext() {
 }
 
 function scroll(){
-	animatetop();
-	sidebarExpanded = true;
-	console.log("onloadscroll");
+	if(!isMobile){
+		animatetop();
+		sidebarExpanded = true;
+		console.log("onloadscroll");
+	}
+
 }
 
 
