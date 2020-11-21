@@ -296,15 +296,15 @@ body {
   padding: 0 4px;
 }
 
+.gallerydiv{
+  position: relative;
+}
+
 .gallerydiv:hover{
   
 }
 
-.imagetext {
-  position: absolute;
-  top:20px;
-  left: 16px;
+.imagetext{
+  display: inline-block;
 }
-.gallerydiv{
-  position: relative;
-}
+
