@@ -12,8 +12,13 @@ body {
   background-color: white;
   animation: body 1s linear;
   overflow-x: hidden;
+  animation: fadeIn 2s;
 }
 
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
 
 * {
   box-sizing: border-box;
