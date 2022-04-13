@@ -1,0 +1,155 @@
+<canvas id="bg" style="overflow: hidden;"></canvas>
+
+
+<script>
+    canvas = document.getElementById("bg");
+    var ctx = canvas.getContext("2d");
+    wx  = window.innerWidth;
+    wy = window.innerHeight;
+    var scale = window.devicePixelRatio; 
+    // canvas.width = Math.floor(wx * scale);
+    // canvas.height = Math.floor(wy * scale);
+    // ctx.scale(scale, scale);
+    canvas.width = wx;
+    canvas.height = wy;
+    var w = canvas.width;
+    var h = canvas.height;
+    const s3o2 = Math.sqrt(3)/2;
+    var mousex = 0;
+    var mousey = 0;
+    var triangleW = h/26;
+    var triangleH = s3o2*triangleW;
+    var triangles = [];
+    const colors = ['#FE948D', '#CBE896', '#3B74E3'];
+
+    var points = [];
+    points.push({x:0, y:-triangleH/2});
+    points.push({x:triangleW/2, y:triangleH/2});
+    points.push({x:-triangleW/2, y:triangleH/2});
+    points.push({x:0, y:-triangleH/2});
+    points.push({x:triangleW/2, y:triangleH/2});
+    console.log(points);
+
+    const createTriangle = (x,y,dir, speed,color) => {
+        return {x:x, y:y, dir:dir, rotate:dir, speed:speed, color:colors[color]};
+    }
+
+    const init = () => {
+        for(var i = 0; i< 10; i++){
+            let tx =  Math.floor(Math.random() * w);
+            let ty =  Math.floor(Math.random() * h);
+            let td = (Math.random() * 6.28) - 3.14;
+            let ts = 0.1;
+            let tc = Math.floor(Math.random() * colors.length);
+            let temp = createTriangle(tx,ty,td,ts,tc);
+            triangles.push(temp);
+        }
+    }
+    
+    const move = () => {
+        console.log("move");
+        for(var i = 0 ; i<triangles.length; i++){
+            triangles[i].x = triangles[i].x + triangles[i].speed * Math.cos(triangles[i].dir);
+            triangles[i].y = triangles[i].y + triangles[i].speed * Math.sin(triangles[i].dir);
+            triangles[i].rotate += 0.05;
+            if(triangles[i].rotate > 3.14){
+                triangles[i].rotate = -3.14;
+            } 
+        }
+        draw();
+    }
+
+    const angleTo = (x,y,x1,y1) => {
+        return Math.atan2(x1-x, y1-y);
+    }
+    const distTo = (x,y,x1,y1) => {
+        return Math.sqrt((x1-x)**2 + (y1-y)**2);
+    }
+
+    const draw = () => {
+        ctx.clearRect(0,0, w, h);
+        ctx.beginPath();
+        ctx.rect(0, 0, w, h);
+        ctx.fillStyle = '#0c0c11';
+        ctx.fill();
+
+        for(var i = 0; i<triangles.length; i++){
+            let curr = triangles[i];
+            var currpoints = [];
+            //console.log(curr);
+            var x = curr.x;
+            var y = curr.y;
+            let angle = angleTo(x,y, mousex, mousey);
+            let dist = distTo(x,y, mousex, mousey);
+            y = y + Math.cos(angle) * dist/30;
+            x = x + Math.sin(angle) * dist/30;
+            ctx.beginPath();
+            for(var j = 0; j < points.length; j++){
+                let tempx = points[j].x * Math.cos(curr.dir) - points[j].y * Math.sin(curr.dir);
+                let tempy = points[j].x * Math.sin(curr.dir) + points[j].y * Math.cos(curr.dir);
+               // console.log(curr.angle);
+                // tempx = points[j].x;
+                // tempy = points[j].y;
+                tempx+=x;
+                tempy+=y;
+                if(j == 0){
+                    ctx.moveTo(tempx,tempy);
+                }
+                else{
+                    ctx.lineTo(tempx, tempy);
+                }
+                //currpoints.push({x:tempx, y:tempy});
+            }
+            ctx.lineWidth = 5;
+            ctx.lineJoin = "round";
+            ctx.strokeStyle = curr.color;
+            ctx.stroke();
+            
+            //console.log(curr);
+
+            //first rotate using rotation matrix
+            // x = xcos0 - ysin0
+            // y = xsin0 + ycos0
+            //then transform all points using x and y
+
+            
+            //ctx.rotate(0.30);
+            
+
+            // ctx.moveTo(x,y);
+            // ctx.lineTo(x + triangleW/2, y +triangleH);
+            // ctx.lineTo(x -triangleW/2, y +triangleH);
+            // ctx.lineTo(x,y);
+            // ctx.lineTo(x + triangleW/2, y +triangleH);
+            
+            
+        }
+       
+    }
+    init();
+    draw();
+    function windowResize() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+        triangleW = h/20;
+        draw();
+    };
+
+    canvas.addEventListener('mousemove', e => {
+        mousex = e.offsetX;
+        mousey = e.offsetY;
+        draw();
+    });
+
+    const int = setInterval(move, 1000/60);
+
+</script>
+
+<style>
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        height: 100%;
+    }
+</style>
