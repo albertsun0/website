@@ -47,11 +47,11 @@
     }
     
     const move = () => {
-        console.log("move");
+        //console.log("move");
         for(var i = 0 ; i<triangles.length; i++){
             triangles[i].x = triangles[i].x + triangles[i].speed * Math.cos(triangles[i].dir);
             triangles[i].y = triangles[i].y + triangles[i].speed * Math.sin(triangles[i].dir);
-            triangles[i].rotate += 0.05;
+            triangles[i].rotate += 0.002;
             if(triangles[i].rotate > 3.14){
                 triangles[i].rotate = -3.14;
             } 
@@ -85,8 +85,8 @@
             x = x + Math.sin(angle) * dist/30;
             ctx.beginPath();
             for(var j = 0; j < points.length; j++){
-                let tempx = points[j].x * Math.cos(curr.dir) - points[j].y * Math.sin(curr.dir);
-                let tempy = points[j].x * Math.sin(curr.dir) + points[j].y * Math.cos(curr.dir);
+                let tempx = points[j].x * Math.cos(curr.rotate) - points[j].y * Math.sin(curr.rotate);
+                let tempy = points[j].x * Math.sin(curr.rotate) + points[j].y * Math.cos(curr.rotate);
                // console.log(curr.angle);
                 // tempx = points[j].x;
                 // tempy = points[j].y;
