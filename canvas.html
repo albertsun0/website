@@ -35,11 +35,11 @@
     }
 
     const init = () => {
-        for(var i = 0; i< 10; i++){
+        for(var i = 0; i< 15; i++){
             let tx =  Math.floor(Math.random() * w);
             let ty =  Math.floor(Math.random() * h);
             let td = (Math.random() * 6.28) - 3.14;
-            let ts = 0.1;
+            let ts = 0.15;//0.1;
             let tc = Math.floor(Math.random() * colors.length);
             let temp = createTriangle(tx,ty,td,ts,tc);
             triangles.push(temp);
@@ -49,6 +49,12 @@
     const move = () => {
         //console.log("move");
         for(var i = 0 ; i<triangles.length; i++){
+            if(triangles[i].x > w+50 || triangles[i].x < 0){
+                triangles[i].dir = Math.PI-triangles[i].dir;
+            }
+            if(triangles[i].y > h || triangles[i].y < 0){
+                triangles[i].dir = -triangles[i].dir;
+            }
             triangles[i].x = triangles[i].x + triangles[i].speed * Math.cos(triangles[i].dir);
             triangles[i].y = triangles[i].y + triangles[i].speed * Math.sin(triangles[i].dir);
             triangles[i].rotate += 0.002;
